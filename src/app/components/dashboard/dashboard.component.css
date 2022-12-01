@@ -1,0 +1,16 @@
+.col-lg-4 img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+input{
+    text-align: center;
+}
+
+.size{
+    font-size: 1.2rem;
+}
