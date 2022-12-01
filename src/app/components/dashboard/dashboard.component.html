@@ -1,0 +1,41 @@
+<div *ngIf="mostrarError"    
+     class="alert alert-dismissible alert-danger">
+    <div class="text-center ">
+        <strong>ERROR AL OPTENER CLIMA</strong>
+    </div>  
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <img [src]="urlImagen" alt="img_clima">
+        </div>
+        <div class="col-lg-6">
+            <input [(ngModel)]="ciudad" class="form-control form-control-lg size" type="text"
+                placeholder="Ingrese Ciudad">
+
+            <button (click)="optenertClima()" [disabled]="ciudad  == '' "
+                class="btn btn-primary btn-lg btn-block mt-4 size">
+                OPTENER CLIMA
+            </button>
+
+            <!--Spiner-->
+            <div *ngIf="loading" class="text-center mt-3">
+                <div class="spinner-grow text-primary" role="status"></div>
+                <div class="spinner-grow text-primary" role="status"></div>
+                <div class="spinner-grow text-primary" role="status"></div>
+            </div>
+
+            <!--Spiner-->
+            <div *ngIf="query" class="card mt-3">
+                <div class="card-body">
+                    <p><b>Ciudad: </b>{{ nombreCiudad }}</p>
+                    <p><b>Temperatura: </b>{{temperatura | number: '1.2-2'}} °C</p>
+                    <p><b>Humedad: </b>{{humedad}}</p>
+                    <p><b>Clima: </b>{{ clima }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
